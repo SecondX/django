@@ -4,6 +4,7 @@ from restaurants.models import Restaurant, Food
 
 class RestaurantAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone_number', 'address')
+    search_fields = ('name', 'address')
 
 class FoodAdmin(admin.ModelAdmin):
     list_display = ('name', 'restaurant', 'price')
