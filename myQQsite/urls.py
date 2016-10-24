@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from restaurants.views import menu
+from django.contrib import admin
 
 urlpatterns = [
     url(r'^menu/$', menu),
+    url(r'^admin/', include(admin.site.urls)),
 ]
