@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 from django import template
 from django.template.loader import get_template
+from django.shortcuts import render_to_response
 
 
 
@@ -11,7 +12,5 @@ def math(request, a, b):
     a = int(a)
     b = int(b)
     s, d, p, q = a+b, a-b, a*b, a/b
+    return render_to_response('math.html', locals())
 
-    t = get_template('math.html')
-    content = template.Context({'s':s, 'd':d, 'p':p, 'q':q})
-    return HttpResponse(t.render(content))
