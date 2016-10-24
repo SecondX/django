@@ -14,13 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include, url
-from django.contrib import admin
-from views import here, math
+from views import menu
 
-admin.autodiscover()
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^here/', here),
-    url(r'^(\d{1,2})/math/(\d{1,2})/$', math),
+    url(r'^menu/$', menu),
 ]
